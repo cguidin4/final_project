@@ -11,15 +11,45 @@ output:
 
 
 ```{r setup, include=FALSE}
+##Updated upstream
 knitr::opts_chunk$set(echo = FALSE, eval= TRUE, warning = FALSE, message = FALSE)
 library(here)
 library(janitor)
 library(tidyverse)
 library(rio)
+library(performance)
+library(ggResidpanel)
+library(htmlwidgets)
+library(see)
+library(patchwork)
+library(ltm)
 ```
+
 
 ```{r load_data}
 asian_men <- import(here("data", "asian_men.sav"))
+```
+
+
+```{r model_assumptions}
+m <- lm(DMS_mean ~ income_group_new + Education_new_group + BMI + psychiatric_dx_group + AD_racism_mean,
+             data = asian_men)
+check_model(m)
+```
+
+```{r data_analysis}
+#Linear regression examining link between experiences with racism and drive for muscularity. All anlayses adjusting for income, education, BMI, presence of a psychiatric diagnosis
+lmRacism = lm(DMS_mean~income_group_new + Education_new_group + BMI + psychiatric_dx_group + AD_racism_mean,
+             data = asian_men)
+
+summary(lmRacism)
+
+#Linear regression examining link between experiences with microaggressions and drive for muscularity. All anlayses adjusting for income, education, BMI, presence of a psychiatric diagnosis
+lmMicroaggressions = lm(DMS_mean~income_group_new + Education_new_group + BMI + psychiatric_dx_group + AD_microaggr_mean,
+             data = asian_men)
+summary(lmMicroaggressions)
+```
+
 ```
 
 #Introduction
