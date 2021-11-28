@@ -30,12 +30,15 @@ library(tinytex)
 theme_set(theme_minimal(base_size = 12))
 
 ```
+
+# nice use of additional packages!
 \allsectionsfont{\centering}
 \subsectionfont{\raggedright}
 \subsubsectionfont{\raggedright}
 
 \pagenumbering{gobble}
 
+#do these add different syles and effects to the final paper?
 
 \begin{centering}
 \vspace{24pt}
@@ -60,19 +63,21 @@ Evidently, harmful stereotypes have a profound effect on Asian/Asian American me
 	This study seeks to examine the link between experiences with racial discrimination, both in the forms of overt racism and microaggressions, in young Asian/Asian American men. It is hypothesized that experiences with both overt racism and microaggressions will be significantly and positively associated with the behavioral drive for muscularity (e.g., body building, supplement consumption, metabolic steroid use, excessive weightlifting, etc.). The study hypotheses are as follows:
 Hypothesis 1: Experiences with overt racism will be significantly and positively associated with the behavioral drive for muscularity in young, Asian/Asian American men. 
 Hypothesis 2: Experiences with microaggressions will be significantly and positively associated with the behavioral drive for muscularity in young, Asian/Asian American men. 
-
+#wow great work on you hypotheses!
 \begin{centering}
 # **Methods**
 \end{centering}
 This study was approved by the University of Oregon Institutional Review Board (IRB). Data were collected between January-February 2017. Participants were recruited through Qualtrics Panels, which utilize social media outlets to recruit a diverse sample of survey respondents. Eligibility criteria included being 18-to-30-years-old; self-identifying as male and Asian/Asian American; and English fluency. Participants were asked to complete an online survey. All study responses were anonymous and considered invalid if less than 80% of questions were answered (Dong & Peng, 2013), the survey was completed in < 2 minutes (n = 9), or if participants failed to answer “yes” to an embedded validity item (n = 52).
 ## **Measures**
-_Demographics._ Participants self-reported their age; height (ft, in) and weight (lbs.), from which body mass index (BMI) in kg/m2 was calculated; ethnicity; generation status; geographic region; highest education; employment status; income; geographic region; and presence of a psychiatric diagnosis.
+_Demographics._ Participants self-reported their age; height (ft, in) and weight (lbs.), from which body mass index (BMI) in kg/m2 was calculated; ethnicity; generation status; geographic region; highest education; employment status; income; geographic region; and presence of a psychiatric diagnosis. 
+#I would may be add in after psychiatric diagnosis "if applicable". I am assuming that not all individuals had one present, correct?
 _Experiences with racism._ Participants completed the 13-item Asian American Racism-Related Stress Inventory (Miller et al., 2012). Items were rated on a 5-point scale from 1 (This has never happened to me or someone I know) to 5 (This event happened, and I was extremely upset). Two subscale composite scores were created to measure experiences with overt racism (e.g., “You see a TV commercial in which an Asian character speaks bad English and acts subservient to non-Asian characters”) and microaggressions (e.g., “Someone asks you if you can teach him or her karate”). The Asian American Racism-Related Stress Inventory (Miller et al., 2012) has been found to have strong psychometric properties (α = 0.81-0.95). 
 _Behavioral Drive for Muscularity._ The 15-item Drive for Muscularity Scale (DMS; McCreary & Sasse, 2000) will be used to assess the behavioral drive for muscularity. The DMS measures drive for muscularity across both cognitive and behavioral dimensions; the construct of interest in the present study is the behavioral dimension (e.g., “I lift weights to build up muscle”). Participants rated the frequency to which they engage in behaviors with the intention to increase muscularity on a 6-point Likert scale from 1 (never) to 6 (always). A mean score of the behavioral items was calculated, with higher scores indicating a greater behavioral drive for muscularity. The DMS has demonstrated good internal consistency among ethnically diverse adult men (e.g., Swami, 2016). 
 \begin{centering}
 # **Results**
 \end{centering}
-RStudio Statistical Software was used for all analyses. To ensure data met model assumptions, data were first screened using the “Performance” and “ggResidpanel” packages to assess indices of model quality, goodness of fit, and data missingness. Data fulfilled all model assumptions and missing data were minimal (<2%), and thus listwise deletion was employed (Buhi et al., 2008). All analyses adjusted for BMI, education, income, and presence of psychiatric diagnosis given a robust body of prior literature identifying significant, positive associations with disordered eating symptoms (McLean et al., 2014; Striegel, Bedrosian, Wang, & Schwartz, 2011).
+#I changed "data missingness" as it sounded a bit odd...just a suggestion!
+RStudio Statistical Software was used for all analyses. To ensure data met model assumptions, data were first screened using the “Performance” and “ggResidpanel” packages to assess indices of model quality, goodness of fit, and whether data was missing. Data fulfilled all model assumptions and missing data were minimal (<2%), and thus listwise deletion was employed (Buhi et al., 2008). All analyses adjusted for BMI, education, income, and presence of psychiatric diagnosis given a robust body of prior literature identifying significant, positive associations with disordered eating symptoms (McLean et al., 2014; Striegel, Bedrosian, Wang, & Schwartz, 2011).
 A linear regression was conducted to examine the link between experiences with overt racism and the behavioral drive for muscularity. Experiences with overt racism were significantly and positively associated with the behavioral drive for muscularity in Asian/Asian American men, F(5, 250) = 4.06, p < .01,  R2 =  0.08. Experiences with microaggressions were also significantly and positively associated with the behavioral drive for muscularity in Asian/Asian American men, F(5, 250) = 6.48, p < .001,  R2 =  0.12. Findings indicate that as Asian/Asian American men report greater incidences of both overt racism and microaggressions, they engage in significantly more muscularity-enhancing behaviors (e.g., excessive weightlifting, anabolic steroid use, supplement consumption, etc.).
 
 
@@ -82,19 +87,39 @@ asian_men <- import(here("data", "asian_men.sav")) %>%
   clean_names()
 ```
 
+#added in a section here where you could explore bmi more using group_by and summarize functions. Could also filter by something like psychiatric dx and graph that with something!
+```{r}
+  
+asian_men %>% 
+  group_by(id) %>% 
+  summarize(mean_bmi = mean(bmi, na.rm = TRUE),
+            sd_bmi = sd(bmi, na.rm = TRUE),
+            n_bmi = n(), 
+            min_bmi = min(bmi, na.rm = TRUE), 
+            max_bmi = max(bmi, na.rm = TRUE))
 
+asian_men_id <- asian_men %>% 
+  filter(psychiatric_dx_group == "1") 
+
+```
+
+#possibly add in a description of what you are looking at in this graph here, it is **super** cool to look at though!
 ```{r model_assumptions}
 m <- lm(dms_mean ~ income_group_new + education_new_group + bmi + psychiatric_dx_group + ad_racism_mean,
              data = asian_men)
 check_model(m)
 ```
-
+#great work running analyses! could use some of the variables to add in a graph here...I put an example below but you could really adapt it to whichever variables you would want to plot. 
 ```{r data_analysis}
-#Linear regression examining link between experiences with racism and drive for muscularity. All anlayses adjusting for income, education, BMI, presence of a psychiatric diagnosis
+#Linear regression examining link between experiences with racism and drive for muscularity. All analyses adjusting for income, education, BMI, presence of a psychiatric diagnosis
 lmRacism = lm(dms_mean~income_group_new + education_new_group + bmi + psychiatric_dx_group + ad_racism_mean,
              data = asian_men)
 
 summary(lmRacism)
+
+lmRacism %>% 
+  ggplot(aes(bmi, income_group_new)) +
+  geom_smooth()
 
 #Linear regression examining link between experiences with microaggressions and drive for muscularity. All anlayses adjusting for income, education, BMI, presence of a psychiatric diagnosis
 lmMicroaggressions = lm(dms_mean~income_group_new + education_new_group + bmi + psychiatric_dx_group + ad_microaggr_mean,
@@ -108,7 +133,7 @@ This was the first known study to examine the link between Asian/Asian American 
 The current study sheds further light on the harmful effects of racism on Asian/Asian American’s mental health, including body image and disordered eating behaviors. This is particularly pervasive given the increasingly muscular, mesomorphic male body ideal perpetuated throughout Western media (Edwards et al., 2016). Extant data suggest that Asian/Asian American men are often stereotyped to be smaller, more feminine, less masculine, and less sexually attractive than their non-Asian peers (Wilkins et al., 2011). As such, it is theorized that when Asian/Asian American men experience race-related discrimination (e.g., overt racism and/or microaggressions), their Asian identity becomes particularly salient, therefore perpetuating internalized feelings of perceived inadequacy with regards to embodying the mesomorphic, Western male body ideal. This, in turn, may result in Asian/Asian American men going to extreme lengths to achieve the ideal body physique, including excessive and compulsive muscularity-enhancing behaviors. 
 It is important to consider limitations to the current study, including the cross-sectional study design. The findings are correlational, rather than causal, and experimental and prospective data are needed to determine if experiences with racism prompt muscularity-enhancing behaviors. While the current study includes a large, nationally represented sample of Asian/Asian American men, we were underpowered to examine whether the link between experiences with race-related discrimination and muscularity-enhancing behaviors vary by Asian ethnic identity (e.g., Chinese, Japanese, Korean, Asian Indian, Filipino, and other Asian subgroups). Future research should seek to clarify whether there are intra- and inter-ethnic variations in these associations.
 Although prospective and mechanistic studies are needed, these findings indicate that experiences with race-related discrimination negatively impact Asian/Asian American men’s body image, thus prompting engagement in potentially harmful and compulsive muscularity-enhancing behaviors.  The current study adds to a small, but growing body of research implicating experiences with race-related discrimination as a significant contributor to health disparities among racial/ethnic minority men living in the United States. These data may help to inform clinical programming and preventative interventions aimed at addressing the harmful effects of race-related discrimination on men’s body image and disordered eating behaviors. The current study may also help to inform the development and implementation of interventions aimed at helping Asian/Asian American men adopt healthy coping strategies in response to discriminatory experiences. Overall, this study sheds light on the numerous, adverse effects of race-related discrimination on minority mental health.
-
+#well written and easy to follow and understand. I think you have a great description of what you are interested in researching!
 ```
 
 
