@@ -27,9 +27,13 @@ library(patchwork)
 library(ltm)
 library(dplyr)
 library(tinytex)
+library(kableExtra)
 theme_set(theme_minimal(base_size = 12))
 
 ```
+#Hi our wonderful reviewers! Just FYI - We can't get our rmd file knit to pdf. Dr. Nese is help us to figure out what happened. 
+
+\begin{document} 
 \allsectionsfont{\centering}
 \subsectionfont{\raggedright}
 \subsubsectionfont{\raggedright}
@@ -82,9 +86,43 @@ asian_men <- import(here("data", "asian_men.sav")) %>%
   clean_names()
 ```
 
+<<<<<<< HEAD
+=======
+```{r table1}
+table1 <- asian_men %>% 
+  group_by(psychiatric_dx_group) %>% 
+  summarize(mean_bmi = mean(bmi, na.rm = TRUE), sd_bmi = sd(bmi, na.rm = TRUE), 
+            mean_dms = mean(dms_mean, na.rm = TRUE), sd_dms= sd(dms_mean, na.rm = TRUE), 
+            mean_racism = mean(ad_racism_mean, na.rm = TRUE), sd_racism = sd(ad_racism_mean, na.rm = TRUE), 
+            mean_microaggr = mean(ad_microaggr_mean, na.rm = TRUE), sd_microaggr = sd(ad_microaggr_mean, na.rm = TRUE)) %>% 
+  pivot_longer(
+    table1, 
+    cols = -psychiatric_dx_group, 
+    names_to = c("Mean/SD", "category"), 
+    names_sep = "_",
+    values_to = "value"
+  ) %>% 
+  pivot_wider(
+    names_from = "Mean/SD", 
+    values_from = value
+  ) %>% 
+  mutate(psychiatric_dx_group = recode(psychiatric_dx_group, 
+                    "0" = "No diagosis", 
+                    "1" = "With a dignosis"))
+
+
+kbl(table1, caption = "NEED TO COME UP WITH A NAME", booktabs = T) %>% 
+  kable_styling(latex_options = "striped") %>% 
+  collapse_rows(columns = c(1,2)) 
+
+
+
+```
+
+>>>>>>> final_project
 ```{r model_assumptions}
 m <- lm(dms_mean ~ income_group_new + education_new_group + bmi + psychiatric_dx_group + ad_racism_mean,
-             data = asian_men)
+             data =asian_men)
 check_model(m)
 ```
 
@@ -100,6 +138,16 @@ lmMicroaggressions = lm(dms_mean~income_group_new + education_new_group + bmi + 
              data = asian_men)
 summary(lmMicroaggressions)
 ```
+```{r ggplot}
+#We are going to make this pretty!
+ggplot(asian_men, aes(ad_racism_mean, dms_mean))+
+         geom_smooth(method = "lm")
+ggplot(asian_men, aes(ad_microaggr_mean, dms_mean))+
+         geom_smooth(method = "lm")
+
+```
+
+
 \begin{centering}
 # **Discussion**
 \end{centering}
