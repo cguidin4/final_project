@@ -75,16 +75,11 @@ library(ltm)
 library(dplyr)
 library(tinytex)
 library(kableExtra)
-<<<<<<< HEAD
 library(stargazer)
 library("papaja")
 r_refs("r-references.bib")
-=======
-install.packages("stargazer")
 library(stargazer)
-theme_set(theme_minimal(base_size = 12))
 
->>>>>>> final_project
 ```
  
 **Abstract**
@@ -151,7 +146,7 @@ colnames(table1) <- c("Psychiatric Diagnosis Group", "Category", "Mean", "SD")
 table1[, 1] <- c("No Diagnosis", " ", " ", " ", "With a Diagnosis", " ", " ", " ")
 apa_table(table1, 
           caption = "Means and Standard Deviations for Study Variables", 
-          note = " Means and Standard Deviations for body mass index, drive for musculaity, racism, and microaggressions for Asian/Asian American men with and wiithout a cormorbid psychiatric diiagnosis",
+          note = " Means and Standard Deviations for body mass index, drive for muscularity, racism, and microaggressions for Asian/Asian American men with and without a cormorbid psychiatric diagnosis",
           align = c("l", "r", "r", "r"), 
           escape = FALSE)
 
@@ -165,12 +160,6 @@ m <- lm(dms_mean ~ income_group_new + education_new_group + bmi + psychiatric_dx
 check_model(m)
 ```
 
-
-```{r model_assumptions}
-m <- lm(dms_mean ~ income_group_new + education_new_group + bmi + psychiatric_dx_group + ad_racism_mean,
-             data =asian_men)
-check_model(m)
-```
 
 
 ```{r data_analysis}
@@ -189,10 +178,10 @@ lmMicroaggressions <- lm(dms_mean~income_group_new + education_new_group + bmi +
 ```{r regression-table, results = 'asis'}
 lmRacism1 <- apa_print(lmRacism)
 lmRacism1[, 1] <- c("(Intercept)", "Income", "Education", "BMI", "Psychiatric Diagnosis", "Racism (Mean)")
-apa_table(lmRacism1$table, caption = "Dependent Variable: Behavior drive for muscularity", align = c("l", "r", "c", "r", "r"))
+apa_table(lmRacism1$table, caption = "Dependent Variable: Behavioral drive for muscularity", align = c("l", "r", "c", "r", "r"))
 
 lmMicroaggressions1 <- apa_print(lmMicroaggressions)
-apa_table(lmMicroaggressions1$table, caption = "Dependent Variable: Behavior drive for muscularity", align = c("l", "r", "c", "r", "r"))
+apa_table(lmMicroaggressions1$table, caption = "Dependent Variable: Behavioral drive for muscularity", align = c("l", "r", "c", "r", "r"))
 ```
 
 
@@ -202,7 +191,7 @@ theme_set(theme_bw())
 ggplot(asian_men, aes(ad_racism_mean, dms_mean))+
          geom_smooth(method = "lm", color = "firebrick", se= FALSE) +
   geom_point(size = 1, shape = "diamond")+
-  labs(title = "Link between Overt Racism and the Behavioral Drive for Muscularity ", 
+  labs(title = "Link between Racism and the Behavioral Drive for Muscularity ", 
        x = "Experienced Racism (Mean)", 
        y= "Behavioral Drive for Muscularity (Mean)", 
        caption = "Fig.1") +
@@ -214,7 +203,7 @@ ggplot(asian_men, aes(ad_racism_mean, dms_mean))+
 ggplot(asian_men, aes(ad_microaggr_mean, dms_mean))+
          geom_smooth(method = "lm",color = "firebrick", se= FALSE) +
   geom_point(size = 1, shape = "diamond")+
-  labs(title = "Link between Overt Microaggression and the Behavioral Drive for Muscularity ", 
+  labs(title = "Link between Microaggression and the Behavioral Drive for Muscularity ", 
        x = "Experienced Microaggresion (Mean)", 
        y= "Behavioral Drive for Muscularity (Mean)", 
        caption = "Fig.2") +
@@ -233,7 +222,7 @@ The current study sheds further light on the harmful effects of racism on Asian/
 It is important to consider limitations to the current study, including the cross-sectional study design. The findings are correlational, rather than causal, and experimental and prospective data are needed to determine if experiences with racism prompt muscularity-enhancing behaviors. While the current study includes a large, nationally represented sample of Asian/Asian American men, we were underpowered to examine whether the link between experiences with race-related discrimination and muscularity-enhancing behaviors vary by Asian ethnic identity (e.g., Chinese, Japanese, Korean, Asian Indian, Filipino, and other Asian subgroups). Future research should seek to clarify whether there are intra- and inter-ethnic variations in these associations.
 Although prospective and mechanistic studies are needed, these findings indicate that experiences with race-related discrimination negatively impact Asian/Asian American men’s body image, thus prompting engagement in potentially harmful and compulsive muscularity-enhancing behaviors.  The current study adds to a small, but growing body of research implicating experiences with race-related discrimination as a significant contributor to health disparities among racial/ethnic minority men living in the United States. These data may help to inform clinical programming and preventative interventions aimed at addressing the harmful effects of race-related discrimination on men’s body image and disordered eating behaviors. The current study may also help to inform the development and implementation of interventions aimed at helping Asian/Asian American men adopt healthy coping strategies in response to discriminatory experiences. Overall, this study sheds light on the numerous, adverse effects of race-related discrimination on minority mental health.
 
-<<<<<<< HEAD
+
 
 \newpage
 
@@ -248,8 +237,4 @@ Although prospective and mechanistic studies are needed, these findings indicate
 
 
 
-=======
-```{r, results='asis'}
-stargazer(lmRacism)
-```
->>>>>>> final_project
+
