@@ -28,6 +28,8 @@ library(ltm)
 library(dplyr)
 library(tinytex)
 library(kableExtra)
+install.packages("stargazer")
+library(stargazer)
 theme_set(theme_minimal(base_size = 12))
 
 ```
@@ -164,7 +166,6 @@ The current study sheds further light on the harmful effects of racism on Asian/
 It is important to consider limitations to the current study, including the cross-sectional study design. The findings are correlational, rather than causal, and experimental and prospective data are needed to determine if experiences with racism prompt muscularity-enhancing behaviors. While the current study includes a large, nationally represented sample of Asian/Asian American men, we were underpowered to examine whether the link between experiences with race-related discrimination and muscularity-enhancing behaviors vary by Asian ethnic identity (e.g., Chinese, Japanese, Korean, Asian Indian, Filipino, and other Asian subgroups). Future research should seek to clarify whether there are intra- and inter-ethnic variations in these associations.
 Although prospective and mechanistic studies are needed, these findings indicate that experiences with race-related discrimination negatively impact Asian/Asian American men’s body image, thus prompting engagement in potentially harmful and compulsive muscularity-enhancing behaviors.  The current study adds to a small, but growing body of research implicating experiences with race-related discrimination as a significant contributor to health disparities among racial/ethnic minority men living in the United States. These data may help to inform clinical programming and preventative interventions aimed at addressing the harmful effects of race-related discrimination on men’s body image and disordered eating behaviors. The current study may also help to inform the development and implementation of interventions aimed at helping Asian/Asian American men adopt healthy coping strategies in response to discriminatory experiences. Overall, this study sheds light on the numerous, adverse effects of race-related discrimination on minority mental health.
 
+```{r, results='asis'}
+stargazer(lmRacism)
 ```
-
-
-
