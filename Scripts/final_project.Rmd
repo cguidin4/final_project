@@ -126,6 +126,14 @@ m <- lm(dms_mean ~ income_group_new + education_new_group + bmi + psychiatric_dx
 check_model(m)
 ```
 
+
+```{r model_assumptions}
+m <- lm(dms_mean ~ income_group_new + education_new_group + bmi + psychiatric_dx_group + ad_racism_mean,
+             data =asian_men)
+check_model(m)
+```
+
+
 ```{r data_analysis}
 #Linear regression examining link between experiences with racism and drive for muscularity. All anlayses adjusting for income, education, BMI, presence of a psychiatric diagnosis
 lmRacism = lm(dms_mean~income_group_new + education_new_group + bmi + psychiatric_dx_group + ad_racism_mean,
