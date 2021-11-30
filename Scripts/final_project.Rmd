@@ -78,6 +78,10 @@ _Behavioral Drive for Muscularity._ The 15-item Drive for Muscularity Scale (DMS
 # **Results**
 \end{centering}
 RStudio Statistical Software was used for all analyses. To ensure data met model assumptions, data were first screened using the “Performance” and “ggResidpanel” packages to assess indices of model quality, goodness of fit, and data missingness. Data fulfilled all model assumptions and missing data were minimal (<2%), and thus listwise deletion was employed (Buhi et al., 2008). All analyses adjusted for BMI, education, income, and presence of psychiatric diagnosis given a robust body of prior literature identifying significant, positive associations with disordered eating symptoms (McLean et al., 2014; Striegel, Bedrosian, Wang, & Schwartz, 2011).
+
+>> **Peer Review LMB**: I love the Performance package! I have never used ggResidpanel, but it looks great! I will definitely explore it in the future. I am sure once you get it to knit to PDF, it will look different, in the markdown right now, it would be beneficial to resize it so the reader can see the detail more easily.
+>> **Peer Review LMB**: Just a small note, even though the missing data were minimal, it may be worth imputing the missing data since you mention being underpowered, and it'd be quick/easy to do so with such a low amount of missingness. I like the "mice" and "missForest" packages for imputing.
+
 A linear regression was conducted to examine the link between experiences with overt racism and the behavioral drive for muscularity. Experiences with overt racism were significantly and positively associated with the behavioral drive for muscularity in Asian/Asian American men, F(5, 250) = 4.06, p < .01,  R2 =  0.08. Experiences with microaggressions were also significantly and positively associated with the behavioral drive for muscularity in Asian/Asian American men, F(5, 250) = 6.48, p < .001,  R2 =  0.12. Findings indicate that as Asian/Asian American men report greater incidences of both overt racism and microaggressions, they engage in significantly more muscularity-enhancing behaviors (e.g., excessive weightlifting, anabolic steroid use, supplement consumption, etc.).
 
 ```{r load_data}
@@ -155,6 +159,7 @@ ggplot(asian_men, aes(ad_microaggr_mean, dms_mean))+
 
 ```
 
+>> **Peer Review LMB**: For your regression results, it may be beneficial to use the "final fit" or "jtools" packages to make pretty tables without having to do a lot of work.
 
 \begin{centering}
 # **Discussion**
