@@ -1,0 +1,28 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:table1}}
+
+\begin{tabular}{llll}
+\toprule
+psychiatric\_dx\_group & \multicolumn{1}{c}{category} & \multicolumn{1}{c}{mean} & \multicolumn{1}{c}{sd}\\
+\midrule
+No diagosis & bmi & 23.99 & 5.44\\
+No diagosis & dms & 3.19 & 1.12\\
+No diagosis & racism & 2.58 & 0.89\\
+No diagosis & microaggr & 2.17 & 0.90\\
+With a dignosis & bmi & 24.87 & 6.03\\
+With a dignosis & dms & 3.06 & 1.03\\
+With a dignosis & racism & 2.67 & 1.01\\
+With a dignosis & microaggr & 2.06 & 0.86\\
+\bottomrule
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
