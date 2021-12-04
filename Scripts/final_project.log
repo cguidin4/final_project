@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.11.30)  1 DEC 2021 14:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.11.30)  3 DEC 2021 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -677,7 +677,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  70i,11n,77p,2252b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on final_project.pdf (12 pages, 151037 bytes).
+Output written on final_project.pdf (12 pages, 151038 bytes).
 PDF statistics:
  168 PDF objects out of 1000 (max. 8388607)
  131 compressed objects within 2 object streams

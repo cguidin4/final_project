@@ -147,10 +147,11 @@ lmMicroaggressions <- lm(dms_mean~income_group_new + education_new_group + bmi +
 
 ```{r regression-table, results = 'asis'}
 lmRacism1 <- apa_print(lmRacism)
-lmRacism1[] <- c("(Intercept)", "Income", "Education", "BMI", "Psychiatric Diagnosis", "Racism (Mean)")
+lmRacism1$table[, 1] <- c("(Intercept)", "Income", "Education", "BMI", "Psychiatric Diagnosis", "Overt Racism (Mean)")
 apa_table(lmRacism1$table, caption = "Dependent Variable: Behavioral drive for muscularity", align = c("l", "r", "c", "r", "r"))
 
 lmMicroaggressions1 <- apa_print(lmMicroaggressions)
+lmMicroaggressions1$table[, 1] <- c("(Intercept)", "Income", "Education", "BMI", "Psychiatric Diagnosis", "Microaggression (Mean)")
 apa_table(lmMicroaggressions1$table, caption = "Dependent Variable: Behavioral drive for muscularity", align = c("l", "r", "c", "r", "r"))
 ```
 Findings indicate that as Asian/Asian American men report greater incidences of both overt racism and microaggressions, they engage in significantly more muscularity-enhancing behaviors (e.g., excessive weightlifting, anabolic steroid use, supplement consumption, etc.) [Figure 1 & 2].
