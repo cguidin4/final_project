@@ -61,7 +61,11 @@ library(stargazer)
 library("papaja")
 r_refs("r-references.bib")
 library(stargazer)
+<<<<<<< Updated upstream
 
+=======
+theme_set(theme_minimal(base_size = 12))
+>>>>>>> Stashed changes
 ```
  
 # Introduction
@@ -108,7 +112,7 @@ table1 <- asian_men %>%
     values_from = value
   ) %>% 
   mutate(psychiatric_dx_group = recode(psychiatric_dx_group, 
-                    "0" = "No diagosis", 
+                    "0" = "No diagnosis", 
                     "1" = "With a dignosis"))
 
 
@@ -117,10 +121,13 @@ colnames(table1) <- c("Psychiatric Diagnosis Group", "Category", "Mean", "SD")
 table1[, 1] <- c("No Diagnosis", " ", " ", " ", "With a Diagnosis", " ", " ", " ")
 apa_table(table1, 
           caption = "Means and Standard Deviations for Study Variables", 
+<<<<<<< Updated upstream
           note = " Means and Standard Deviations for body mass index, drive for muscularity, racism, and microaggressions for Asian/Asian American men with and without a cormorbid psychiatric diagnosis",
+=======
+          note = " Means and Standard Deviations for body mass index, drive for muscularity, racism, and microaggressions for Asian/Asian American men with and without a comorbid psychiatric diagnosis",
+>>>>>>> Stashed changes
           align = c("l", "r", "r", "r"), 
           escape = FALSE)
-
 
 ```
 
