@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.11.30)  3 DEC 2021 14:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.11.30)  7 DEC 2021 13:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -651,36 +651,36 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 17
 (/Users/crystal/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2] [3] [4] [5] [6]
-<final_project_files/figure-latex/ggplot-1.pdf, id=68, 464.73625pt x 315.1775pt>
+<final_project_files/figure-latex/ggplot-1.pdf, id=71, 464.73625pt x 315.1775pt>
 File: final_project_files/figure-latex/ggplot-1.pdf Graphic file (type pdf)
 <use final_project_files/figure-latex/ggplot-1.pdf>
-Package pdftex.def Info: final_project_files/figure-latex/ggplot-1.pdf  used on input line 285.
+Package pdftex.def Info: final_project_files/figure-latex/ggplot-1.pdf  used on input line 294.
 (pdftex.def)             Requested size: 464.74928pt x 315.18634pt.
-<final_project_files/figure-latex/ggplot-2.pdf, id=69, 464.73625pt x 315.1775pt>
+<final_project_files/figure-latex/ggplot-2.pdf, id=72, 464.73625pt x 315.1775pt>
 File: final_project_files/figure-latex/ggplot-2.pdf Graphic file (type pdf)
 <use final_project_files/figure-latex/ggplot-2.pdf>
-Package pdftex.def Info: final_project_files/figure-latex/ggplot-2.pdf  used on input line 285.
+Package pdftex.def Info: final_project_files/figure-latex/ggplot-2.pdf  used on input line 294.
 (pdftex.def)             Requested size: 464.74928pt x 315.18634pt.
-[7] [8 <./final_project_files/figure-latex/ggplot-1.pdf>] [9 <./final_project_files/figure-latex/ggplot-2.pdf>] [10] [11] AED endfloat: Processing end Figures and Tables [12] (./final_project.aux)
+[7] [8] [9 <./final_project_files/figure-latex/ggplot-1.pdf> <./final_project_files/figure-latex/ggplot-2.pdf>] [10] [11] [12] [13] [14] [15] AED endfloat: Processing end Figures and Tables [16] (./final_project.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `final_project.out' has not changed.
-(rerunfilecheck)             Checksum: F5903508E7A2A63CA44B34589DA12DD9;640.
+(rerunfilecheck)             Checksum: BCE3E325256AB39DEB3E6E96FF447205;734.
  ) 
 Here is how much of TeX's memory you used:
- 15335 strings out of 480313
- 248588 string characters out of 5896450
- 561539 words of memory out of 5000000
- 32893 multiletter control sequences out of 15000+600000
+ 15389 strings out of 480313
+ 249437 string characters out of 5896450
+ 564560 words of memory out of 5000000
+ 32896 multiletter control sequences out of 15000+600000
  441265 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 70i,11n,77p,2252b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on final_project.pdf (12 pages, 151038 bytes).
+ 70i,12n,77p,2252b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/crystal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/crystal/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on final_project.pdf (16 pages, 173431 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 59 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 251 compressed objects within 3 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 67 words of extra memory for PDF output out of 10000 (max. 10000000)
 
